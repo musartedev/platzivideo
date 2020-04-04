@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Search from "../components/Search";
-import Carousel from '../components/Carousel';
+import Footer from '../components/Footer';
 
 import '../assets/styles/app.scss';
 
@@ -11,7 +11,7 @@ export default class App extends Component {
             <div>
                 <Header />
                 <Search />
-                <Carousel/>
+                <Footer />
             </div>
         )
     }
