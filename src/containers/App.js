@@ -24,27 +24,30 @@ const App = () => {
     fetchVideos();
   }, []);
 
-  console.log(videos);
+  const renderList = (list = []) => {
+    return (
+      <>
+        {list.map((item) => (
+          <CarouselItem key={item.id} {...item} />
+        ))}
+      </>
+    )
+  }
+
   return (
     <div>
       <Header />
       <Search />
-      <Categories title="Mi Lista">
-        <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-        </Carousel>
-      </Categories>
-      <Categories title="Mi Lista 2">
-        <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-        </Carousel>
-      </Categories>
+      {videos.myList && videos.myList.length > 0 && (
+        <Categories title="Mi Lista">
+          <Carousel>{renderList(videos.myList)}</Carousel>
+        </Categories>
+      )}
+      {videos.trends && videos.trends.length > 0 && (
+        <Categories title="Tendencias">
+          <Carousel>{renderList(videos.trends)}</Carousel>
+        </Categories>
+      )}
       <Footer />
     </div>
   );
