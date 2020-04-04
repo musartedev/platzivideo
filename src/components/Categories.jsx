@@ -1,15 +1,15 @@
-import React from 'react';
-import Carousel from '../components/Carousel';
+import React from "react";
 
-import '../assets/styles/components/Categories.scss';
+import "../assets/styles/components/Categories.scss";
 
-const Categories = () => {
-    return (
-        <div>
-            <h3 class="categories__title">Mi lista</h3>
-            <Carousel />
-        </div>
-    )
-}
+const Categories = (props) => {
+  const { title } = props;
+  return (
+    <div>
+      <h3 className="categories__title">{title}</h3>
+      {props.children}
+    </div>
+  );
+};
 
 export default Categories;

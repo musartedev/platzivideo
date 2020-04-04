@@ -1,14 +1,13 @@
 import React from "react";
-import CarouselItem from './CarouseItem';
 
 import '../assets/styles/components/Carousel.scss';
 
 
-const Carousel = () => {
+const Carousel = props => {
   return (
     <section className="carousel">
       <div className="carousel__container">
-        <CarouselItem/>
+          {props.children}
       </div>
     </section>
   );
