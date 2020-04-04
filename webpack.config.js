@@ -36,6 +36,10 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
+      },
     ],
   },
   plugins: [
@@ -44,7 +48,7 @@ module.exports = {
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-        filename: 'assets/[name].css',
-    })
+      filename: "assets/[name].css",
+    }),
   ],
 };
